@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/omiguelperez/multer-example/issues"
   },
-  "homepage": "https://github.com/omiguelperez/multer-example#readme"
+  "homepage": "https://github.com/omiguelperez/multer-example#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "multer": "^1.2.0"
+  }
 }
