@@ -4,13 +4,16 @@ const express = require('express')
 const router = express.Router()
 const path = require('path')
 const multer = require('multer')
+const helper = require('../helper')
 
 let storage = multer.diskStorage({
 	destination: function(req, file, done) {
 		done(null, path.join(__dirname, '..', 'uploads'))
 	},
 	filename: function(req, file, done) {
-		done(null, file.fieldname + '-' + Date.now())
+		let extension = helper.getFileExtension(file.originalname)
+		extension = (extension !== '') ? `.${extension}` : extension
+		done(null, `${file.fieldname}-${Date.now()}${extension}`)
 	}
 })
 
